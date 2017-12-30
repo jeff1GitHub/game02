@@ -1,0 +1,17 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: gateway-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8601/eureka/
+      
+zuul:
+  routes:
+    api-report:
+      path: /api-report/**
+      service-id: consumer-service

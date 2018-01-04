@@ -1,0 +1,20 @@
+server:
+  port: 8902
+
+spring:
+  application:
+    name: account-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/account?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: admin
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:root@localhost:8601/eureka/

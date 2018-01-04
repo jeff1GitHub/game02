@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sf.account.dao.UserDao">
+	<resultMap id="BaseResultMap" type="com.sf.account.bean.User">
+		<id column="f_id" property="id" jdbcType="INTEGER" />
+		<result column="f_name" property="name" jdbcType="VARCHAR" />
+		<result column="f_pwd" property="pwd" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="selectUser" parameterType="java.lang.String" resultMap="BaseResultMap">
+		<![CDATA[
+			SELECT f_id, f_name, f_pwd FROM t_user WHERE f_name = #{name}
+		]]>
+	</select>
+	
+</mapper>

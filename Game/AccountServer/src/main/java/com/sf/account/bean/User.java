@@ -1,32 +1,42 @@
 package com.sf.account.bean;
 
-import org.hibernate.validator.constraints.NotBlank;
+import com.sf.account.entity.EntityBase;
+import com.sf.account.entity.UserEntity;
 
-public class User {
-	private int id;
-	@NotBlank(message = "账号不能为空!")
-	private String name;
-	@NotBlank(message = "密码不能为空!")
+public class User extends BeanBase {
+	private static final long serialVersionUID = 1L;
+	/** 唯一编号 */
+	private long id;
+	/** 账号 */
+	private String account;
+	/** 密码 */
 	private String pwd;
 
-	public int getId() {
+	public void init(long id, String account, String pwd){
+		this.id = id;
+		this.account = account;
+		this.pwd = pwd;
+	}
+
+	public long getId() {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+	public String getAccount() {
+		return account;
 	}
 
 	public String getPwd() {
 		return pwd;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	@Override
+	public EntityBase toEntity() {
+		UserEntity entity = new UserEntity();
+		entity.setId(id);
+		entity.setAccount(account);
+		entity.setPwd(pwd);
+		return entity;
 	}
 
 }

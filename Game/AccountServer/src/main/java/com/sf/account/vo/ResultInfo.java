@@ -1,4 +1,4 @@
-package com.sf.account.bean;
+package com.sf.account.vo;
 
 public class ResultInfo<T> {
 	private int code;

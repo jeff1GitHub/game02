@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.sf.account.bean.ResultInfo;
+import com.sf.account.vo.ResultInfo;
 
 @RestControllerAdvice
 public class ResultExceptionHandle {

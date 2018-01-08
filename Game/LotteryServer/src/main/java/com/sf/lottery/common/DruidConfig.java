@@ -1,4 +1,4 @@
-package com.sf.account.bean;
+package com.sf.lottery.common;
 
 import javax.sql.DataSource;
 
@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
+/**
+ * Druid数据库连接池配置类
+ */
 @Configuration
 public class DruidConfig {
 	@Value("${spring.datasource.url}")

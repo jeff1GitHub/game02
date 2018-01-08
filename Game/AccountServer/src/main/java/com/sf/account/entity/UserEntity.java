@@ -6,7 +6,7 @@ import com.sf.account.bean.BeanBase;
 import com.sf.account.bean.User;
 
 /**
- * 用户实体
+ * 用户实体类
  */
 public class UserEntity extends EntityBase {
 	/** 唯一编号 */

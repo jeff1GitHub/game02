@@ -1,4 +1,4 @@
-package com.sf.account.controller;
+package com.sf.lottery.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.sf.account.vo.ResultInfo;
+import com.sf.lottery.vo.ResultInfo;
 
 /**
  * RestController异常处理类

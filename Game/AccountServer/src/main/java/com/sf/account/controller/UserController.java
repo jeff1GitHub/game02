@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sf.account.bean.PageInfo;
 import com.sf.account.bean.User;
-import com.sf.account.service.RedisServiceImpl;
+import com.sf.account.service.IRedisService;
 import com.sf.account.service.UserService;
 import com.sf.account.vo.ResultInfo;
 import com.sf.account.vo.UserVo;
@@ -18,7 +18,7 @@ public class UserController {
 	@Resource
 	private UserService userService;
 	@Resource
-	private RedisServiceImpl redisServiceImpl;
+	private IRedisService redisService;
 
 	@RequestMapping(value = "/register")
 	public ResultInfo<Object> registerUser(@Validated UserVo vo) {
@@ -43,21 +43,21 @@ public class UserController {
 		if(user == null){
 			resultInfo = new ResultInfo<>(11, "账号或密码错误!");
 		}else{
-			redisServiceImpl.set("aa", user);
+			redisService.set("aa", user, -1);
 			resultInfo = new ResultInfo<>(1, "success", user);
 		}
 		return resultInfo;
 	}
 	
 	@RequestMapping(value = "/users")
-	public ResultInfo<PageInfo<User>> users(int pageNum) {
-		User user = (User)redisServiceImpl.get("aa");
+	public ResultInfo<PageInfo> users(int pageNum) {
+		User user = (User)redisService.get("aa");
 		if(user == null){
-			ResultInfo<PageInfo<User>> resultInfo = new ResultInfo<>(-1, "error.");
+			ResultInfo<PageInfo> resultInfo = new ResultInfo<>(-1, "error.");
 			return resultInfo;
 		}
-		PageInfo<User> pageInfo = userService.getUsers(pageNum, 2);
-		ResultInfo<PageInfo<User>> resultInfo = new ResultInfo<PageInfo<User>>(1, "success", pageInfo);
+		PageInfo pageInfo = userService.getUsers(pageNum, 2);
+		ResultInfo<PageInfo> resultInfo = new ResultInfo<PageInfo>(1, "success", pageInfo);
 		return resultInfo;
 	}
 	

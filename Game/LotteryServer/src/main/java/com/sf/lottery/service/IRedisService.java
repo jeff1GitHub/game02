@@ -1,4 +1,4 @@
-package com.sf.account.service;
+package com.sf.lottery.service;
 
 import java.util.List;
 import java.util.Map;

@@ -5,6 +5,9 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * 工具类
+ */
 public class Tools {
 
 	/**

@@ -1,7 +1,7 @@
-package com.sf.account.bean;
+package com.sf.lottery.bean;
 
 import com.github.pagehelper.Page;
-import com.sf.account.entity.EntityBase;
+import com.sf.lottery.entity.EntityBase;
 
 /**
  * 分页信息类

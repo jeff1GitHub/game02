@@ -1,6 +1,6 @@
-package com.sf.account.entity;
+package com.sf.lottery.entity;
 
-import com.sf.account.bean.BeanBase;
+import com.sf.lottery.bean.BeanBase;
 
 /**
  * Entity的基类

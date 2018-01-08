@@ -3,7 +3,7 @@ package com.sf.account.bean;
 import java.sql.Date;
 
 /**
- * 管理员实体
+ * 管理员信息类
  */
 public class Manager {
 	/** 唯一编号 */

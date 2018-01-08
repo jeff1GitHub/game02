@@ -25,6 +25,7 @@ public class AccountApplication {
 		SpringApplication.run(AccountApplication.class, args);
 	}
 	
+	//让SpringBoot内置的缓存框架使用我们的Redis作为新的缓存
 	@Bean
 	public CacheManager cacheManager(RedisTemplate<String, Object> redisTemplate) {
 		return new RedisCacheManager(redisTemplate);
@@ -42,7 +43,9 @@ public class AccountApplication {
 		template.setConnectionFactory(factory);
 		template.setKeySerializer(new StringRedisSerializer());
 		template.setValueSerializer(jackson2JsonRedisSerializer);
-		template.afterPropertiesSet();
+//		template.setHashKeySerializer(new StringRedisSerializer());
+//		template.setHashValueSerializer(new JdkSerializationRedisSerializer());
+//		template.afterPropertiesSet();
 		return template;
 	}
 

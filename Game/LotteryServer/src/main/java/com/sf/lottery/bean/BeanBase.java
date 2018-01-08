@@ -1,8 +1,8 @@
-package com.sf.account.bean;
+package com.sf.lottery.bean;
 
 import java.io.Serializable;
 
-import com.sf.account.entity.EntityBase;
+import com.sf.lottery.entity.EntityBase;
 
 /**
  * Bean的基类

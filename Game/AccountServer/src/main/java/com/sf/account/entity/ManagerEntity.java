@@ -3,7 +3,7 @@ package com.sf.account.entity;
 import java.sql.Date;
 
 /**
- * 管理员实体
+ * 管理员实体类
  */
 public class ManagerEntity {
 	/** 唯一编号 */

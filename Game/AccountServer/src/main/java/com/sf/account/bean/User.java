@@ -3,6 +3,9 @@ package com.sf.account.bean;
 import com.sf.account.entity.EntityBase;
 import com.sf.account.entity.UserEntity;
 
+/**
+ * 用户信息类
+ */
 public class User extends BeanBase {
 	private static final long serialVersionUID = 1L;
 	/** 唯一编号 */
